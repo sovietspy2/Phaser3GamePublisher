@@ -1,0 +1,13 @@
+[Unit]
+Description=Phaser3 game webhook
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=centos
+ExecStart=/usr/bin/python3 /home/sovietspy2/www/Phaser3GamePublisher/api.py
+
+[Install]
+WantedBy=multi-user.target
