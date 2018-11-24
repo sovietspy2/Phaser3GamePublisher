@@ -4,7 +4,7 @@ import subprocess
 import logging
 import time
 
-logging.basicConfig(filename='/home/sovietspy2/log/api.log',level=logging.INFO)
+logging.basicConfig(filename='log.log',level=logging.INFO)
 
 app = Flask(__name__)
 
@@ -21,4 +21,4 @@ def index():
     return "OK"
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=False, port=8000)
