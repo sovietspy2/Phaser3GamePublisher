@@ -8,7 +8,7 @@ logging.basicConfig(filename='log.log',level=logging.INFO)
 
 app = Flask(__name__)
 
-@app.route('/publish')
+@app.route('/publish', methods=['GET', 'POST'])
 def index():
     current_time = time.asctime( time.localtime(time.time()) )
     subprocess.call("git -C /home/sovietspy2/www/phaser3Game/ pull",shell=True)
