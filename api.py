@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/publish', methods=['GET', 'POST'])
 def index():
     current_time = time.asctime( time.localtime(time.time()) )
-    subprocess.call("git -C /home/sovietspy2/www/phaser3Game/ fetch && git reset --hard origin/master") #this is important because of building
+    subprocess.call("git -C /home/sovietspy2/www/phaser3Game/ fetch && git reset --hard origin/master", shell=True) #this is important because of building
     subprocess.call("git -C /home/sovietspy2/www/phaser3Game/ pull",shell=True)
     logging.info('Pulled . . .')
     subprocess.call("npm install --prefix /home/sovietspy2/www/phaser3Game/",shell=True)
